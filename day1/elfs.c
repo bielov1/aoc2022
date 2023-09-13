@@ -78,7 +78,7 @@ void part2(){
 	        shifting(tops_arr, total, 0);
 	    } else if (total > tops_arr[1]){
 	        shifting(tops_arr, total, 1);
-	    } else {
+	    } else if (total > tops_arr[2]){
 	        shifting(tops_arr, total, 2);
 	    }
 	    total = 0;
