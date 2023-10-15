@@ -4,6 +4,8 @@
 #include <stdbool.h>
 #include <ctype.h>
 
+#define ARRAY_LEN(xs) (sizeof(xs)/sizeof(xs[0]))
+
 bool line_is_empty(const char *str){
     while(*str){
 	if(!isspace((unsigned char) *str)){
@@ -16,11 +18,10 @@ bool line_is_empty(const char *str){
     return true;
 }
 
-void shifting(int arr[], int t, int index){
-    int temp;
+void shifting(int* arr, int t, int index){
     if(t > arr[index]){
-	for(int j = sizeof(arr) - 2; j >= index; j--){
-	    arr[j+1] = arr[j];
+    	for(int j = ARRAY_LEN(arr) - 2; j >= index; j--){
+	    	arr[j+1] = arr[j];
 	}
         arr[index] = t;
     }
@@ -74,7 +75,7 @@ void part2(){
 	int temp = atoi(line);
 	total += temp;
 	if(line_is_empty(line)){
-	    if(total >tops_arr[0]){
+	    if(total > tops_arr[0]){
 	        shifting(tops_arr, total, 0);
 	    } else if (total > tops_arr[1]){
 	        shifting(tops_arr, total, 1);
