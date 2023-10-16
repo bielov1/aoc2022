@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <assert.h>
 
-
 #define arr_size 3
 
 struct sigrecord{
