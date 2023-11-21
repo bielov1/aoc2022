@@ -61,7 +61,7 @@ int solve_file(const char* file_path)
 int main(int argc, char *argv[])
 {
 	for (int i = 1; i < argc; ++i){
-	    printf("part1: %d\n", solve_file(argv[i]));
+	    printf("answer: %d\n", solve_file(argv[i]));
         
         
     }

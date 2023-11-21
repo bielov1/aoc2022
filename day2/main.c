@@ -12,9 +12,9 @@ struct sigrecord{
 int part1(const char* in)
 {
 	FILE* f;
-    
+
 	int sum = 0;
-    
+
     f = fopen(in, "r");
     if(f == NULL){
 		fputs("Cannot open %s file\n", stderr);
@@ -22,7 +22,7 @@ int part1(const char* in)
     }
 
     do{
-		int n = fscanf(f, "%c %c%*[\n\r]", sigrec.oppon, sigrec.me);
+        int n = fscanf(f, "%c %c%*[\n\r]", sigrec.oppon, sigrec.me);
         if(n == 2){
             switch(*sigrec.me){
                 //paper
@@ -78,9 +78,9 @@ int part1(const char* in)
 int part2(const char* in)
 {
     FILE* f;
-    
+
 	int sum = 0;
-    
+
     f = fopen(in, "r");
     if(f == NULL){
 		fputs("Cannot open %s file\n", stderr);
@@ -133,7 +133,7 @@ int part2(const char* in)
     } while(1);
 
 	fclose(f);
-  	
+
 	return sum;
 }
 
